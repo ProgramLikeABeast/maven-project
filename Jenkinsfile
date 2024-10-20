@@ -13,7 +13,7 @@ pipeline {
                 success {
                     echo '开始存档....'
                     archiveArtifacts artifacts: '**/target/*.war'
-                    sh "/usr/bin/docker build . -t tomcatwebapp:${env.BUILD_ID}"
+                    sh "sudo /usr/bin/docker build . -t tomcatwebapp:${env.BUILD_ID}"
                 }
             }
         }
